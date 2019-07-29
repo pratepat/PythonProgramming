@@ -6,17 +6,31 @@
 
 def sockMerchant(n, ar):
     ar = sorted(ar)
-
+    print(ar)
     i=j=k=0
-    for i in range(0,n-1):
+    num = ar[i]
+    while(i<n-1):
         if(ar[i] == ar[i+1]):
-            j = j+1 #3
+            j = j + 1
+            #print('i = '+str(i) +' ar1 = ' +str(ar[i]) +' ar2 = '+str(ar[i+1]) +' j = '+str(j))
+            i = i + 2
         else:
-            j = 0
-
-
-# Driver
+            i = i + 1
+    return j
+# TC 1
 n = 9
 ar = [10 ,20 ,20 ,10 ,10 ,30 ,50 ,10 ,20]
-
 print(sockMerchant(n, ar))
+#3
+
+# TC 2
+n = 10
+ar = [1 ,1 ,3 ,1 ,2 ,1 ,3 ,3 ,3 ,3]
+print(sockMerchant(n, ar))
+#4
+
+# TC 3
+n = 15
+ar = [6, 5, 2, 3, 5, 2, 2, 1, 1, 5, 1, 3, 3, 3, 5]
+print(sockMerchant(n, ar))
+#6
